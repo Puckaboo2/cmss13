@@ -22,7 +22,7 @@
 	var/accept_beaker_only = TRUE
 	var/obj/item/reagent_container/beaker = null
 	var/ui_check = 0
-	var/static/list/possible_transfer_amounts = list(5,10,20,30,40)
+	var/static/list/possible_transfer_amounts = list(5,10,15,20,30,40,60)
 	/// List of typepaths for reagent containers that a chem dispenser will accept; all containers allowed if empty.
 	var/list/whitelisted_containers = list()
 	var/list/dispensable_reagents = list(
@@ -59,18 +59,18 @@
 /obj/structure/machinery/chem_dispenser/research
 	network = "Research"
 
-/obj/structure/machinery/chem_dispenser/process()
-	if(!chem_storage)
-		chem_storage = GLOB.chemical_data.connect_chem_storage(network)
 
 /obj/structure/machinery/chem_dispenser/Initialize()
-	. = ..()
+	..()
 	dispensable_reagents = sortList(dispensable_reagents)
-	start_processing()
+	return INITIALIZE_HINT_LATELOAD
+
+/obj/structure/machinery/chem_dispenser/LateInitialize()
+	chem_storage = GLOB.chemical_data.connect_chem_storage(network)
 
 /obj/structure/machinery/chem_dispenser/Destroy()
-	if(!chem_storage)
-		chem_storage = GLOB.chemical_data.disconnect_chem_storage(network)
+	GLOB.chemical_data.disconnect_chem_storage(network)
+	chem_storage = null
 	return ..()
 
 /obj/structure/machinery/chem_dispenser/ex_act(severity)
