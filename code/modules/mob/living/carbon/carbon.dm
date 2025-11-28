@@ -102,7 +102,7 @@
 				if(current_surgery)
 					if(current_surgery.attempt_next_step(user, weapon))
 						return TRUE //Cancel attack.
-					if(SURGERY_TOOLS_CAUTERIZE[weapon?.type] && initiate_surgery_moment(weapon, src, affecting, user))
+					if((SURGERY_TOOLS_CAUTERIZE[weapon?.type] || SURGERY_TOOLS_SUTURE[weapon?.type]) && initiate_surgery_moment(weapon, src, affecting, user))
 						return TRUE // Emergency close incision
 				else if(initiate_surgery_moment(weapon, src, affecting, user))
 					return TRUE
