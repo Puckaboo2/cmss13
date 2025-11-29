@@ -1,10 +1,7 @@
-	/**
-	  *
-	  * Does the surgery initiation. Returns TRUE if the triggering attack should be halted.
-	  *
-	  */
-
-/proc/initiate_surgery_moment(obj/item/tool, mob/living/carbon/target, obj/limb/affecting, mob/living/user)
+/**
+ * Does the surgery initiation. Returns TRUE if the triggering attack should be halted.
+ */
+/proc/initiate_surgery_moment(obj/item/tool, mob/living/carbon/target, obj/limb/affecting, mob/living/user, list/filter)
 	if(!tool && !(affecting.status & LIMB_UNCALIBRATED_PROSTHETIC))
 		return FALSE
 	var/target_zone = user.zone_selected
@@ -36,7 +33,11 @@
 	if(user.action_busy) //already doing an action
 		return FALSE
 
+	var/filtered = islist(filter) && length(filter)
 	for(var/datum/surgery/surgeryloop as anything in GLOB.surgeries_by_zone_and_depth[target_zone][target.incision_depths[target_zone]])
+		if(filtered && !(surgeryloop.type in filter))
+			continue // Not a surgery allowed in filter
+
 		//Skill check.
 		if((target.mob_flags & EASY_SURGERY) ? !skillcheck(user, SKILL_SURGERY, SKILL_SURGERY_NOVICE) : !skillcheck(user, SKILL_SURGERY, surgeryloop.required_surgery_skill))
 			continue
@@ -115,7 +116,7 @@
 					else
 						hint_msg += ", [current_step.desc]"
 				else
-					hint_msg = "You can't [current_step.desc] with \the [tool]"
+					hint_msg = "You can't [current_step.desc] with [tool]"
 			if(!isnull(hint_msg))
 				to_chat(user, SPAN_WARNING("[hint_msg]."))
 		return FALSE
@@ -168,3 +169,9 @@
 	#endif
 	procedure.attempt_next_step(user, tool)
 	return TRUE
+
+/**
+ * Performs initiate_surgery_moment with a filter to surgeries that can abort an existing surgery
+ */
+/proc/initiate_surgery_abort(obj/item/tool, mob/living/carbon/target, obj/limb/affecting, mob/living/user)
+	return initiate_surgery_moment(tool, target, affecting, user, list(/datum/surgery/close_incision, /datum/surgery/suture_incision))

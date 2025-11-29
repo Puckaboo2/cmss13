@@ -102,18 +102,20 @@
 				if(current_surgery)
 					if(current_surgery.attempt_next_step(user, weapon))
 						return TRUE //Cancel attack.
-					if((SURGERY_TOOLS_CAUTERIZE[weapon?.type] || SURGERY_TOOLS_SUTURE[weapon?.type]) && initiate_surgery_moment(weapon, src, affecting, user))
+					if(initiate_surgery_abort(weapon, src, affecting, user))
 						return TRUE // Emergency close incision
 				else if(initiate_surgery_moment(weapon, src, affecting, user))
 					return TRUE
 
 			if(INTENT_DISARM) //Same as help but without the shrapnel dig attempt.
 				var/datum/surgery/current_surgery = active_surgeries[user.zone_selected]
+				var/obj/limb/affecting = get_limb(check_zone(user.zone_selected))
 				if(current_surgery)
 					if(current_surgery.attempt_next_step(user, weapon))
 						return TRUE
+					if(initiate_surgery_abort(weapon, src, affecting, user))
+						return TRUE // Emergency close incision
 				else
-					var/obj/limb/affecting = get_limb(check_zone(user.zone_selected))
 					if(initiate_surgery_moment(weapon, src, affecting, user))
 						return TRUE
 
@@ -166,11 +168,13 @@
 
 	if(target_mob.mob_flags & SURGERY_MODE_ON && target_mob.a_intent & (INTENT_HELP|INTENT_DISARM))
 		var/datum/surgery/current_surgery = active_surgeries[target_mob.zone_selected]
+		var/obj/limb/affecting = get_limb(check_zone(target_mob.zone_selected))
 		if(current_surgery)
 			if(current_surgery.attempt_next_step(target_mob, null))
 				return TRUE
+			if(initiate_surgery_abort(null, src, affecting, target_mob))
+				return TRUE // Emergency close incision
 		else
-			var/obj/limb/affecting = get_limb(check_zone(target_mob.zone_selected))
 			if(affecting && initiate_surgery_moment(null, src, affecting, target_mob))
 				return TRUE
 
