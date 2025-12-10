@@ -232,12 +232,15 @@
 			if(amount > src.reagents.maximum_volume)
 				to_chat(user, SPAN_WARNING("You stop trying to empty [pbottle.name] because [src] cannot contain any more of its pills."))
 				for(var/mob/O in viewers(2, user))
-					O.show_message(SPAN_DANGER("[user] stops emptying [pbottle.name] into [src]."), SHOW_MESSAGE_VISIBLE)
+					O.show_message(SPAN_NOTICE("[user] stops emptying [pbottle.name] into [src]."), SHOW_MESSAGE_VISIBLE)
+				return FALSE
+			if(!pill)
+				to_chat(user, SPAN_WARNING("You ran out of pills in [pbottle.name] to pour into [src]."))
+				for(var/mob/O in viewers(2, user))
+					O.show_message(SPAN_NOTICE("[user] stops emptying [pbottle.name] into [src]."), SHOW_MESSAGE_VISIBLE)
 				return FALSE
 			dump_pills(pill)
 			pbottle.forced_item_removal(pill)
-		for(var/mob/O in viewers(2, user))
-			O.show_message(SPAN_DANGER("[user] pours something from [pbottle.name] into [src]."), SHOW_MESSAGE_VISIBLE)
 		return // No call parent AFTER loop is done. Prevents pill bottles from attempting to gather pills.
 
 	return ..()
