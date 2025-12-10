@@ -208,7 +208,7 @@
 			to_chat(user, SPAN_WARNING("[src]'s lid is on. You can't dump pills on a lid."))
 			return
 		if(!src.reagents)
-			to_chat(user, SPAN_WARNING("[src] needs to have some liquid for you to dissolve the pills in [pbottle.name]."))
+			to_chat(user, SPAN_WARNING("[src] needs to have some liquid for you to dissolve the pills from [pbottle.name]."))
 			return
 		if(src.reagents.total_volume == src.reagents.maximum_volume)
 			to_chat(user, SPAN_WARNING("[src] is full. You cannot dissolve any more pills."))
