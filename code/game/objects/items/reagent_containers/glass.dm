@@ -204,7 +204,6 @@
 
 	if(istype(W, /obj/item/storage/pill_bottle)) //dumping a pill bottle's contents in a container
 		var/obj/item/storage/pill_bottle/pbottle = W
-		var/max_pills_count = 16
 		if(!src.is_open_container())
 			to_chat(user, SPAN_WARNING("[src]'s lid is on. You can't dump pills on a lid."))
 			return
