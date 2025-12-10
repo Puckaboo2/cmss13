@@ -233,6 +233,55 @@
 	. = ..()
 	update_icon()
 
+/obj/structure/reagent_dispensers/tank/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W, /obj/item/storage/pill_bottle)) //dumping a pill bottle's contents in a container
+		var/obj/item/storage/pill_bottle/pbottle = W
+		if(!src.is_open_container())
+			to_chat(user, SPAN_WARNING("[src]'s lid is on. You can't dump pills on a lid."))
+			return
+		if(!src.reagents)
+			to_chat(user, SPAN_WARNING("[src] needs to have some liquid for you to dissolve the pills from [pbottle.name]."))
+			return
+		if(src.reagents.total_volume == src.reagents.maximum_volume)
+			to_chat(user, SPAN_WARNING("[src] is full. You cannot dissolve any more pills."))
+			return
+		if(length(pbottle.contents) <= 0)
+			to_chat(user, SPAN_WARNING("You don't have any pills to dump from [pbottle.name]."))
+			return
+		user.visible_message(SPAN_NOTICE("[user] starts to empty [pbottle.name] into [src]..."),
+		SPAN_NOTICE("You start to empty [pbottle.name] into [src]..."))
+		for(var/mob/O in viewers(2, user))
+			O.show_message(SPAN_DANGER("[user] tries to pour the contents of [pbottle.name] into [src]..."), SHOW_MESSAGE_VISIBLE)
+
+		var/waiting_time = pbottle.contents //1.6 seconds at max capacity pbottle
+
+		if(!do_after(user, waiting_time, INTERRUPT_NO_NEEDHAND|BEHAVIOR_IMMOBILE, BUSY_ICON_FRIENDLY, src))
+			return
+
+		for(var/obj/item/reagent_container/pill/pill in W.contents)
+			var/amount = reagents.total_volume + src.reagents.total_volume
+			var/loss = amount - src.reagents.maximum_volume
+			if(amount > src.reagents.maximum_volume)
+				to_chat(user, SPAN_WARNING("You stop dissolving pills after [src] overflows and takes [loss]u of your most recent pill with it."))
+				dump_pills(pill) //Suffer. Either put the pill in one at a time, next time, or use a bigger beaker, or check if a beaker is full before trying to dump pills in.
+				pbottle.forced_item_removal(pill)
+				for(var/mob/O in viewers(2, user))
+					O.show_message(SPAN_NOTICE("[user] stops emptying [pbottle.name] into [src]."), SHOW_MESSAGE_VISIBLE)
+				return FALSE
+			if(!pill)
+				to_chat(user, SPAN_WARNING("You ran out of pills in [pbottle.name] to pour into [src]."))
+				for(var/mob/O in viewers(2, user))
+					O.show_message(SPAN_NOTICE("[user] stops emptying [pbottle.name] into [src]."), SHOW_MESSAGE_VISIBLE)
+				return FALSE
+			dump_pills(pill)
+			pbottle.forced_item_removal(pill)
+		return // No call parent AFTER loop is done. Prevents pill bottles from attempting to gather pills.
+
+	return ..()
+
+/obj/structure/reagent_dispensers/tank/proc/dump_pills(obj/item/reagent_container/pill/pill, mob/user)
+	pill.reagents.trans_to(src, reagents.total_volume)
+
 /obj/structure/reagent_dispensers/tank/fuel/get_examine_text(mob/user)
 	. = ..()
 	if(user != loc)
@@ -254,6 +303,7 @@
 	else
 		. = ..()
 /obj/structure/reagent_dispensers/tank/fuel/attackby(obj/item/W as obj, mob/user as mob)
+	. = ..()
 	src.add_fingerprint(user)
 
 	if(user.action_busy)
