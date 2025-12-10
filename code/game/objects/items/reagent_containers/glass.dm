@@ -228,9 +228,12 @@
 			return
 
 		for(var/obj/item/reagent_container/pill/pill in W.contents)
-			var/amount = pill.reagents.total_volume + src.reagents.total_volume
+			var/amount = reagents.total_volume + src.reagents.total_volume
+			var/loss = amount - src.reagents.maximum_volume
 			if(amount > src.reagents.maximum_volume)
-				to_chat(user, SPAN_WARNING("You stop trying to empty [pbottle.name] because [src] cannot contain any more of its pills."))
+				to_chat(user, SPAN_WARNING("You stop dissolving pills after [src] overflows and takes [loss]u of your most recent pill with it."))
+				dump_pills(pill) //Suffer. Either put the pill in one at a time, next time, or use a bigger beaker, or check if a beaker is full before trying to dump pills in.
+				pbottle.forced_item_removal(pill)
 				for(var/mob/O in viewers(2, user))
 					O.show_message(SPAN_NOTICE("[user] stops emptying [pbottle.name] into [src]."), SHOW_MESSAGE_VISIBLE)
 				return FALSE
