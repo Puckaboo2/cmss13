@@ -433,7 +433,7 @@ Everything bellow is a parent used as a base for one or multiple maps.
 	skills = /datum/skills/civilian/survivor
 	flags = EQUIPMENT_PRESET_START_OF_ROUND
 	paygrades = list(PAY_SHORT_ICCL = JOB_PLAYTIME_TIER_0)
-	faction_group = FACTION_LIST_SURVIVOR_WY
+	faction_group = list(FACTION_LIST_SURVIVOR_ICC, FACTION_LIST_WY)
 	idtype = /obj/item/card/id/silver/cl
 	role_comm_title = "ICC Rep."
 	minimap_icon = "icc"

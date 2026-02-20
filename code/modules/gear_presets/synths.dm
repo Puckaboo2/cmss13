@@ -631,6 +631,7 @@
 	idtype = /obj/item/card/id/silver/cl
 	role_comm_title = "ICC Syn"
 	minimap_background = "background_cmb"
+	faction_group = FACTION_LIST_SURVIVOR_ICC
 	equipment_to_spawn = list(
 		WEAR_L_EAR = /obj/item/device/radio/headset/distress/CMB/limited,
 		WEAR_R_EAR = /obj/item/tool/pen/clicky,

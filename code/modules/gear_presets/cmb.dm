@@ -686,7 +686,7 @@
 	idtype = /obj/item/card/id/silver/cl
 	role_comm_title = "ICC Rep."
 	flags = EQUIPMENT_PRESET_EXTRA
-
+	faction_group = FACTION_LIST_ICC
 	minimap_icon = "icc"
 
 	assignment = "Interstellar Commerce Commission Corporate Liaison"
