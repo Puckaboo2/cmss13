@@ -50,7 +50,7 @@
 	assignment = JOB_WY_COMMANDO_STANDARD
 	job_title = JOB_WY_COMMANDO_STANDARD
 	faction = FACTION_PMC
-	faction_group = list(FACTION_WY, FACTION_SURVIVOR, FACTION_PMC)
+	faction_group = FACTION_LIST_SURVIVOR_WY
 	paygrades = list(PAY_SHORT_WY_COM = JOB_PLAYTIME_TIER_0)
 	idtype = /obj/item/card/id/pmc/commando
 	skills = /datum/skills/civilian/survivor/pmc/commando

@@ -9,7 +9,7 @@
 	assignment = "LV-624 Corporate Liaison"
 	idtype = /obj/item/card/id/silver/clearance_badge/cl
 	faction = FACTION_WY
-	faction_group = list(FACTION_WY, FACTION_SURVIVOR, FACTION_PMC)
+	faction_group = FACTION_LIST_SURVIVOR_WY
 	access = list(
 		ACCESS_WY_GENERAL,
 		ACCESS_WY_COLONIAL,
@@ -162,7 +162,7 @@
 	minimap_icon = "goon_synth"
 	role_comm_title = "WY Syn"
 	faction = FACTION_WY
-	faction_group = list(FACTION_WY, FACTION_SURVIVOR, FACTION_PMC)
+	faction_group = FACTION_LIST_SURVIVOR_WY
 	equipment_to_spawn = list(
 		WEAR_HEAD = /obj/item/clothing/head/cmcap/wy_cap,
 		WEAR_L_EAR = /obj/item/device/radio/headset/distress/WY,

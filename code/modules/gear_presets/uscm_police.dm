@@ -1,6 +1,7 @@
 /datum/equipment_preset/uscm_ship/uscm_police
 	name = "USCM (police roles)"
 	faction = FACTION_MARINE
+	faction_group = FACTION_LIST_POLICE_UA //they can see other popo too
 	minimum_age = 21
 	minimap_background = "background_mp"
 

@@ -1,7 +1,7 @@
 /datum/equipment_preset/twe
 	name = "Three World Empire"
 	faction = FACTION_TWE
-	faction_group = list(FACTION_TWE, FACTION_MARINE)
+	faction_group = list(FACTION_LIST_NSPA)
 	origin_override = ORIGIN_TWE
 	languages = list(LANGUAGE_ENGLISH, LANGUAGE_JAPANESE)
 	minimap_background = "background_twe"

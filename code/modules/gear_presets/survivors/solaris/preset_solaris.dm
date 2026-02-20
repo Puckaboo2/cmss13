@@ -89,7 +89,7 @@
 	role_comm_title = "CMB MAR"
 	paygrades = list(PAY_SHORT_CMBM = JOB_PLAYTIME_TIER_0)
 	minimap_icon = "deputy"
-	faction_group = list(FACTION_MARSHAL, FACTION_MARINE, FACTION_SURVIVOR)
+	faction_group = FACTION_LIST_SURVIVOR_UA
 	idtype = /obj/item/card/id/marshal
 	skills = /datum/skills/cmb/co_survivor
 	access = list(
