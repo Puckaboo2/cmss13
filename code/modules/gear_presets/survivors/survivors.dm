@@ -194,7 +194,7 @@ Standart Survivors :	/datum/equipment_preset/survivor/scientist,
 	idtype = /obj/item/card/id/deputy
 	job_title = JOB_CMB
 	faction = FACTION_MARSHAL
-	faction_group = list(FACTION_SURVIVOR, FACTION_POLICE)
+	faction_group = list(FACTION_SURVIVOR, FACTION_LIST_POLICE_UA)
 	origin_override = ORIGIN_CMB
 	role_comm_title = "CMB DEP"
 	access = list(
