@@ -34,7 +34,7 @@
 	minimap_icon = "cmp"
 	idtype = /obj/item/card/id/silver/cl
 	faction = FACTION_WY
-	faction_group = list(FACTION_WY, FACTION_SURVIVOR)
+	faction_group = FACTION_LIST_SURVIVOR_WY
 
 /datum/equipment_preset/survivor/security/fiorina/load_gear(mob/living/carbon/human/new_human)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/under/liaison_suit/black(new_human), WEAR_BODY)
@@ -58,7 +58,7 @@
 	faction = FACTION_SURVIVOR
 	minimap_icon = "mp"
 	minimap_background = "background_ua"
-	 
+
 
 /datum/equipment_preset/survivor/colonial_marshal/fiorina/load_gear(mob/living/carbon/human/new_human)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/under/marine/ua_riot(new_human), WEAR_BODY)

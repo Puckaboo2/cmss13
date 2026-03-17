@@ -160,7 +160,7 @@
 	assignment = JOB_WY_GOON_SYNTH
 	job_title = JOB_WY_GOON_SYNTH
 	faction = FACTION_WY
-	faction_group = list(FACTION_WY, FACTION_SURVIVOR)
+	faction_group = FACTION_LIST_SURVIVOR_WY
 	minimap_icon = "goon_synth"
 	minimap_background = "background_goon"
 

@@ -300,7 +300,6 @@ Everything bellow is a parent used as a base for one or multiple maps.
 	faction_group = FACTION_LIST_SURVIVOR_WY
 	job_title = JOB_EXECUTIVE
 	faction = FACTION_WY
-	faction_group = list(FACTION_WY, FACTION_SURVIVOR)
 	origin_override = ORIGIN_WY
 	idtype = /obj/item/card/id/silver/clearance_badge/cl
 	access = list(

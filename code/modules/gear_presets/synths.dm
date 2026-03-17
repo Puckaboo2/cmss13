@@ -98,7 +98,7 @@
 /datum/equipment_preset/synth/survivor/wy
 	flags = EQUIPMENT_PRESET_STUB
 	faction = FACTION_WY
-	faction_group = list(FACTION_WY, FACTION_SURVIVOR)
+	faction_group = FACTION_LIST_SURVIVOR_WY
 	minimap_icon = "wy_syn"
 	minimap_background = "background_goon"
 	origin_override = ORIGIN_WY
