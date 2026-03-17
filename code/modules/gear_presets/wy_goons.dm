@@ -3,7 +3,7 @@
 	faction = FACTION_WY
 	job_title = FACTION_WY
 	idtype = /obj/item/card/id/silver/cl
-	faction_group = FACTION_LIST_POLICE_TWE
+	faction_group = FACTION_LIST_WY
 	origin_override = ORIGIN_WY_SEC
 	languages = list(LANGUAGE_ENGLISH, LANGUAGE_JAPANESE)
 	minimap_background = "background_goon"

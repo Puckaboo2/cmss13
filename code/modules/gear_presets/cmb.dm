@@ -1,7 +1,7 @@
 /datum/equipment_preset/cmb
 	name = "Colonial Marshal"
 	faction = FACTION_MARSHAL
-	faction_group = list(FACTION_LIST_POLICE_UA)
+	faction_group = list(FACTION_LIST_UA)
 	job_title = JOB_CMB
 	idtype = /obj/item/card/id/deputy
 	languages = list(LANGUAGE_ENGLISH, LANGUAGE_JAPANESE)

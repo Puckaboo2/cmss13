@@ -249,7 +249,7 @@
 /datum/equipment_preset/other/freelancer/leader/hunted
 	name = "Freelancer Leader (Hunted)"
 	faction = FACTION_HUNTED_MERC
-	faction_group = FACTION_LIST_HUNTED
+	faction_group = list(FACTION_LIST_HUNTED, FACTION_FREELANCER)
 
 /datum/equipment_preset/other/freelancer/leader/hunted/load_gear(mob/living/carbon/human/new_human)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/under/marine/veteran/freelancer, WEAR_BODY)

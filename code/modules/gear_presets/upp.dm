@@ -4108,7 +4108,7 @@
 /datum/equipment_preset/upp/soldier/hunted
 	name = "UPP Soldier (Hunted)"
 	faction = FACTION_HUNTED_UPP
-	faction_group = FACTION_LIST_HUNTED
+	faction_group = list(FACTION_LIST_HUNTED, FACTION_LIST_UPP)
 
 /datum/equipment_preset/upp/soldier/hunted/load_gear(mob/living/carbon/human/new_human)
 	//head
@@ -4146,7 +4146,7 @@
 /datum/equipment_preset/upp/machinegunner/hunted
 	name = "UPP Machinegunner (Hunted)"
 	faction = FACTION_HUNTED_UPP
-	faction_group = FACTION_LIST_HUNTED
+	faction_group = list(FACTION_LIST_HUNTED, FACTION_LIST_UPP)
 
 /datum/equipment_preset/upp/machinegunner/hunted/load_gear(mob/living/carbon/human/new_human)
 	//back
@@ -4179,7 +4179,7 @@
 /datum/equipment_preset/upp/leader/hunted
 	name = "UPP Squad Leader (Hunted)"
 	faction = FACTION_HUNTED_UPP
-	faction_group = FACTION_LIST_HUNTED
+	faction_group = list(FACTION_LIST_HUNTED, FACTION_LIST_UPP)
 
 /datum/equipment_preset/upp/leader/hunted/load_gear(mob/living/carbon/human/new_human)
 	var/UPPleadsidearm = rand(1,4)
@@ -4225,7 +4225,7 @@
 /datum/equipment_preset/upp/sapper/hunted
 	name = "UPP Sapper (Hunted)"
 	faction = FACTION_HUNTED_UPP
-	faction_group = FACTION_LIST_HUNTED
+	faction_group = list(FACTION_LIST_HUNTED, FACTION_LIST_UPP)
 
 /datum/equipment_preset/upp/sapper/hunted/load_gear(mob/living/carbon/human/new_human)
 
@@ -4258,7 +4258,7 @@
 
 /datum/equipment_preset/upp/commando/hunted
 	name = "UPP Commando (Hunted)"
-	faction_group = FACTION_LIST_HUNTED
+	faction_group = list(FACTION_LIST_HUNTED, FACTION_LIST_UPP)
 	faction = FACTION_HUNTED_UPP
 	skills = /datum/skills/hunted_specops/scout // instant injectors but not instant trauma kits, can use cloak
 
@@ -4296,7 +4296,7 @@
 /datum/equipment_preset/upp/commando/medic/hunted
 	name = "UPP Commando Medic (Hunted)"
 	faction = FACTION_HUNTED_UPP
-	faction_group = FACTION_LIST_HUNTED
+	faction_group = list(FACTION_LIST_HUNTED, FACTION_LIST_UPP)
 	skills = /datum/skills/hunted_specops/scout/medic // instant trauma kits & can revive others
 
 /datum/equipment_preset/upp/commando/medic/hunted/load_status(mob/living/carbon/human/new_human)
@@ -4341,7 +4341,7 @@
 /datum/equipment_preset/upp/commando/leader/hunted
 	name = "UPP Commando Leader (Hunted)"
 	faction = FACTION_HUNTED_UPP
-	faction_group = FACTION_LIST_HUNTED
+	faction_group = list(FACTION_LIST_HUNTED, FACTION_LIST_UPP)
 	skills = /datum/skills/hunted_specops/scout
 
 /datum/equipment_preset/upp/commando/leader/hunted/load_status(mob/living/carbon/human/new_human)

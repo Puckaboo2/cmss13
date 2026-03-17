@@ -19,7 +19,7 @@
 	role_comm_title = "CMB RCO"
 	flags = EQUIPMENT_PRESET_EXTRA
 	faction = FACTION_MARSHAL
-	faction_group = list(FACTION_LIST_POLICE, FACTION_SURVIVOR)
+	faction_group = list(FACTION_LIST_SURVIVOR_UA)
 	assignment = "CMB Riot Control Officer"
 	idtype = /obj/item/card/id/deputy/riot
 	job_title = JOB_CMB_RIOT
