@@ -533,7 +533,7 @@
 		return ..()
 
 	if(!HAS_TRAIT(user, TRAIT_YAUTJA_TECH))
-		to_chat(user, SPAN_WARNING("You do not know how to attach the [attacking_item] to [src]."))
+		to_chat(user, SPAN_WARNING("You do not know how to attach [attacking_item] to [src]."))
 		return
 
 	if(blades_enabled == FALSE)
