@@ -357,7 +357,7 @@
 			var/id = food.reagents.get_master_reagent_id()
 			if (id)
 				amount+=food.reagents.get_reagent_amount(id)
-		qdel(O)
+		qdel(food)
 	if(src.reagents)
 		src.reagents.clear_reagents()
 	ffuu.reagents.add_reagent("carbon", amount)
