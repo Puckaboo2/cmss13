@@ -60,7 +60,7 @@
 			SPAN_NOTICE("You finish simultaneously constructing a prepared, bloodless, and widened surgical site in [target]'s [surgery.affected_limb.display_name]."),
 			SPAN_NOTICE("[user] finishes simultaneously constructing a prepared, bloodless, and widened surgical site in [surgery.affected_limb.display_name]."),
 			SPAN_NOTICE("[user] has constructed a prepared, bloodless, and widened surgical site in [target]'s [surgery.affected_limb.display_name]."))
-		playsound(target.loc, 'sound/surgery/retractor2.ogg', vol = 40, sound_range = 1)
+		playsound(get_turf(target), 'sound/surgery/retractor2.ogg', vol = 40, sound_range = 1)
 		surgery.status += 6 //IMS completes all steps.
 
 		switch(target_zone) //forces application of overlays
@@ -74,14 +74,14 @@
 			SPAN_NOTICE("You finish making a bloodless incision on [target]'s [surgery.affected_limb.display_name] with [tool]."),
 			SPAN_NOTICE("[user] finishes making a bloodless incision on your [surgery.affected_limb.display_name] with [tool]."),
 			SPAN_NOTICE("[user] finishes making a bloodless incision on [target]'s [surgery.affected_limb.display_name] with [tool]."))
-		playsound(target.loc, 'sound/surgery/laserscalpel2.ogg', vol = 40, sound_range = 1) //good laser scalpels get the true success noise.
+		playsound(get_turf(target), 'sound/surgery/laserscalpel2.ogg', vol = 40, sound_range = 1) //good laser scalpels get the true success noise.
 		surgery.status += 3 //A laser scalpel may cauterise as it cuts.
 	else
 		user.affected_message(target,
 			SPAN_NOTICE("You finish the incision on [target]'s [surgery.affected_limb.display_name]."),
 			SPAN_NOTICE("[user] finishes the incision on your [surgery.affected_limb.display_name]."),
 			SPAN_NOTICE("[user] finishes the incision on [target]'s [surgery.affected_limb.display_name]."))
-		playsound(target.loc, 'sound/surgery/scalpel2.ogg', vol = 40, sound_range = 1) //naughty laser scalpels get the normal scalpel sound if they fail to make bloodless incisions.
+		playsound(get_turf(target), 'sound/surgery/scalpel2.ogg', vol = 40, sound_range = 1) //naughty laser scalpels get the normal scalpel sound if they fail to make bloodless incisions.
 
 		if(!(surgery.affected_limb.status & LIMB_SYNTHSKIN))
 			var/datum/effects/bleeding/external/incision_bleed = new(target, surgery.affected_limb, 10)
@@ -190,7 +190,7 @@
 	var/surface_modifier = target.buckled?.surgery_duration_multiplier
 	if(!surface_modifier)
 		surface_modifier = SURGERY_SURFACE_MULT_AWFUL
-		for(var/obj/surface in target.loc)
+		for(var/obj/surface in get_turf(target))
 			if(surface_modifier > surface.surgery_duration_multiplier)
 				surface_modifier = surface.surgery_duration_multiplier
 
@@ -330,7 +330,7 @@
 			target.emote("pain")
 
 	if(tool.hitsound)
-		playsound(target.loc, tool.hitsound, 25, TRUE)
+		playsound(get_turf(target), tool.hitsound, 25, TRUE)
 	target.apply_damage(15, BRUTE, target_zone)
 	log_interact(user, target, "[key_name(user)] violently retracted skin in [key_name(target)]'s [surgery.affected_limb.display_name], ending [surgery].")
 	return TRUE //Failing to finish this step doesn't fail it, it just means you do it a lot more violently.
@@ -522,7 +522,7 @@
 
 	user.animation_attack_on(target)
 	if(tool.hitsound)
-		playsound(target.loc, tool.hitsound, 25, TRUE)
+		playsound(get_turf(target), tool.hitsound, 25, TRUE)
 	target.apply_damage(20, BRUTE, target_zone)
 	log_interact(user, target, "[key_name(user)] violently cut through [key_name(target)]'s [surgery.affected_limb.encased], beginning [surgery].")
 	return TRUE
@@ -765,6 +765,6 @@
 
 	if(tool_type != /obj/item/tool/surgery/bonegel)
 		to_chat(user, SPAN_NOTICE("The metal rods used on [target]'s [surgery.affected_limb.display_name] fall loose from their [surgery.affected_limb]."))
-		var/obj/item/stack/rods/rods = new /obj/item/stack/rods(target.loc)
+		var/obj/item/stack/rods/rods = new /obj/item/stack/rods(get_turf(target))
 		rods.amount = 2 //Refund 2 rods on failure
 		rods.update_icon()

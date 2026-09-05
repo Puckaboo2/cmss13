@@ -140,7 +140,7 @@
 
 	if(tool_type != /obj/item/tool/surgery/bonegel)
 		to_chat(user, SPAN_NOTICE("The metal rods used on [target]'s [surgery.affected_limb.display_name] fall loose from their [surgery.affected_limb]."))
-		var/obj/item/stack/rods/rods = new /obj/item/stack/rods(target.loc)
+		var/obj/item/stack/rods/rods = new /obj/item/stack/rods(get_turf(target))
 		rods.amount = 2 //Refund 2 rods on failure
 		rods.update_icon()
 
@@ -201,7 +201,7 @@
 
 	user.count_niche_stat(STATISTICS_NICHE_SURGERY_BONES)
 	if(surgery.affected_limb.status & LIMB_SPLINTED_INDESTRUCTIBLE)
-		new /obj/item/stack/medical/splint/nano(target.loc, 1)
+		new /obj/item/stack/medical/splint/nano(get_turf(target), 1)
 
 	surgery.affected_limb.status &= ~(LIMB_SPLINTED|LIMB_SPLINTED_INDESTRUCTIBLE|LIMB_BROKEN)
 	surgery.affected_limb.perma_injury = 0

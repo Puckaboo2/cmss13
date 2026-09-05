@@ -69,7 +69,7 @@
 	target.custom_pain("It feels as if your [surgery.affected_limb.display_name] is being ripped apart!", 1)
 
 	if(tool.hitsound)
-		playsound(target.loc, tool.hitsound, 25, TRUE)
+		playsound(get_turf(target), tool.hitsound, 25, TRUE)
 	log_interact(user, target, "[key_name(user)] attempted an amputation on [key_name(target)]'s [surgery.affected_limb.display_name] with [tool ? "[tool]" : "their hands"].")
 
 /datum/surgery_step/cut_muscle/success(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, tool_type, datum/surgery/surgery)
@@ -180,7 +180,7 @@
 			target.emote("scream") //MY! ARRRRRRMMMM! - Scout from Team Fortress 2
 
 	if(tool.hitsound)
-		playsound(target.loc, tool.hitsound, 25, TRUE)
+		playsound(get_turf(target), tool.hitsound, 25, TRUE)
 
 	log_interact(user, target, "[key_name(user)] attempted to continue an amputation on [key_name(target)]'s [surgery.affected_limb.display_name] with [tool].")
 
