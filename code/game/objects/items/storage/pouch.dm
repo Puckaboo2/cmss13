@@ -522,7 +522,7 @@
 
 	can_hold = list(
 		/obj/item/ammo_magazine/pistol,
-		/obj/item/ammo_magazine/pistol/heavy,
+		/obj/item/ammo_magazine/pistol/deagle,
 		/obj/item/ammo_magazine/revolver,
 	)
 
@@ -1316,7 +1316,7 @@
 
 	playsound(loc, 'sound/effects/refill.ogg', 25, TRUE, 3)
 
-	to_chat(user, SPAN_NOTICE("You refill the [src]."))
+	to_chat(user, SPAN_NOTICE("You refill [src]."))
 	update_icon()
 
 /obj/item/storage/pouch/pressurized_reagent_canister/get_examine_text(mob/user)
@@ -1396,16 +1396,12 @@
 		return
 
 	to_chat(usr, SPAN_NOTICE("You hold down the emergency flush button. Wait 3 seconds..."))
-
-	if(!do_after(usr, 3 SECONDS, INTERRUPT_ALL|BEHAVIOR_IMMOBILE, BUSY_ICON_BUILD))
-		to_chat(usr, SPAN_WARNING("You get distracted and stop trying to empty [inner]."))
-		return
-
-	playsound(src.loc, 'sound/effects/slosh.ogg', 25, 1, 3)
-	to_chat(usr, SPAN_WARNING("You work the flush valve and successfully flush [inner]'s contents!"))
-	inner.reagents.clear_reagents()
-	update_icon()
-	return
+	if(do_after(usr, 3 SECONDS, INTERRUPT_ALL|BEHAVIOR_IMMOBILE, BUSY_ICON_BUILD))
+		if(inner)
+      playsound(src.loc, 'sound/effects/slosh.ogg', 25, 1, 3)
+      to_chat(usr, SPAN_WARNING("You work the flush valve and successfully flush [inner]'s contents!"))
+			inner.reagents.clear_reagents()
+			update_icon()
 
 /obj/item/storage/pouch/pressurized_reagent_canister/verb/remove_canister()
 	set category = "Objects"
