@@ -104,7 +104,7 @@
 				broken = 0 // just to be sure
 				icon_state = "mw"
 				flags_atom = OPENCONTAINER
-		else //foodtherwise bad luck!!
+		else //Otherwise bad luck!!
 			to_chat(user, SPAN_DANGER("It's dirty! Clean it with a spray cleaner!"))
 			return 1
 	else if(operating)
