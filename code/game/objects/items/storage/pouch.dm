@@ -1398,8 +1398,8 @@
 	to_chat(usr, SPAN_NOTICE("You hold down the emergency flush button. Wait 3 seconds..."))
 	if(do_after(usr, 3 SECONDS, INTERRUPT_ALL|BEHAVIOR_IMMOBILE, BUSY_ICON_BUILD))
 		if(inner)
-      playsound(src.loc, 'sound/effects/slosh.ogg', 25, 1, 3)
-      to_chat(usr, SPAN_WARNING("You work the flush valve and successfully flush [inner]'s contents!"))
+			playsound(src.loc, 'sound/effects/slosh.ogg', 25, 1, 3)
+			to_chat(usr, SPAN_WARNING("You work the flush valve and successfully flush [inner]'s contents!"))
 			inner.reagents.clear_reagents()
 			update_icon()
 
