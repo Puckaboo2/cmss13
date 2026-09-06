@@ -266,25 +266,9 @@
 	var/chem_refill_volume_max = 600
 	/// A list of item types that allow reagent refilling
 	var/list/chem_refill = list(
-		/obj/item/reagent_container/hypospray/autoinjector/standard/bicaridine,
-		/obj/item/reagent_container/hypospray/autoinjector/standard/dexalinp,
-		/obj/item/reagent_container/hypospray/autoinjector/standard/antitoxin,
-		/obj/item/reagent_container/hypospray/autoinjector/standard/adrenaline,
-		/obj/item/reagent_container/hypospray/autoinjector/standard/inaprovaline,
-		/obj/item/reagent_container/hypospray/autoinjector/standard/kelotane,
-		/obj/item/reagent_container/hypospray/autoinjector/standard/oxycodone,
-		/obj/item/reagent_container/hypospray/autoinjector/standard/peridaxon,
-		/obj/item/reagent_container/hypospray/autoinjector/standard/tramadol,
-		/obj/item/reagent_container/hypospray/autoinjector/standard/tricordrazine,
-
-		/obj/item/reagent_container/hypospray/autoinjector/ez/one_use/tricordrazine,
-		/obj/item/reagent_container/hypospray/autoinjector/ez/one_use/tramadol,
-
-		/obj/item/reagent_container/hypospray/autoinjector/ez/bicaridine,
-		/obj/item/reagent_container/hypospray/autoinjector/ez/antitoxin,
-		/obj/item/reagent_container/hypospray/autoinjector/ez/kelotane,
-		/obj/item/reagent_container/hypospray/autoinjector/ez/tramadol,
-		/obj/item/reagent_container/hypospray/autoinjector/ez/tricordrazine,
+		/obj/item/reagent_container/hypospray/autoinjector/standard,
+		/obj/item/reagent_container/hypospray/autoinjector/ez,
+		/obj/item/reagent_container/hypospray/autoinjector/tutorial,
 
 		/obj/item/reagent_container/hypospray/tricordrazine,
 
@@ -734,8 +718,7 @@
 	vendor_theme = VENDOR_THEME_USCM
 
 	chem_refill = list(
-		/obj/item/reagent_container/hypospray/autoinjector/ez/one_use/tricordrazine,
-		/obj/item/reagent_container/hypospray/autoinjector/ez/one_use/tramadol,
+		/obj/item/reagent_container/hypospray/autoinjector/ez/one_use,
 	)
 
 /obj/structure/machinery/cm_vending/sorted/medical/marinemed/populate_product_list(scale)
@@ -837,13 +820,7 @@
 	chem_refill_volume = 250
 	chem_refill_volume_max = 250
 	chem_refill = list(
-		/obj/item/reagent_container/hypospray/autoinjector/ez/one_use/tricordrazine,
-		/obj/item/reagent_container/hypospray/autoinjector/ez/one_use/tramadol,
-		/obj/item/reagent_container/hypospray/autoinjector/ez/tricordrazine,
-		/obj/item/reagent_container/hypospray/autoinjector/ez/bicaridine,
-		/obj/item/reagent_container/hypospray/autoinjector/ez/antitoxin,
-		/obj/item/reagent_container/hypospray/autoinjector/ez/kelotane,
-		/obj/item/reagent_container/hypospray/autoinjector/ez/tramadol,
+		/obj/item/reagent_container/hypospray/autoinjector/ez,
 	)
 
 /obj/structure/machinery/cm_vending/sorted/medical/wall_med/limited
@@ -852,8 +829,7 @@
 	chem_refill_volume = 150
 	chem_refill_volume_max = 150
 	chem_refill = list(
-		/obj/item/reagent_container/hypospray/autoinjector/ez/one_use/tricordrazine,
-		/obj/item/reagent_container/hypospray/autoinjector/ez/one_use/tramadol,
+		/obj/item/reagent_container/hypospray/autoinjector/ez/one_use,
 	)
 
 /obj/structure/machinery/cm_vending/sorted/medical/wall_med/lifeboat
