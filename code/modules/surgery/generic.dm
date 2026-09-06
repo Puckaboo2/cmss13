@@ -39,7 +39,7 @@
 		user.affected_message(target,
 			SPAN_NOTICE("You start to simultaneously construct a prepared, bloodless, and widened surgical site in [target]'s [surgery.affected_limb.display_name] with [tool]."),
 			SPAN_NOTICE("[user] starts to simultaneously construct a prepared, bloodless, and widened surgical site in your [surgery.affected_limb.display_name] with [tool]."),
-			SPAN_NOTICE("[user] to simultaneously construct a prepared, bloodless, and widened surgical site in [target]'s [surgery.affected_limb.display_name] with [tool]."))
+			SPAN_NOTICE("[user] starts to simultaneously construct a prepared, bloodless, and widened surgical site in [target]'s [surgery.affected_limb.display_name] with [tool]."))
 
 		target.custom_pain("You feel a horrible, searing pain in your [surgery.affected_limb.display_name] as your flesh is sliced, clamped, and pushed apart!", 1)
 	else
@@ -59,7 +59,7 @@
 		user.affected_message(target,
 			SPAN_NOTICE("You finish simultaneously constructing a prepared, bloodless, and widened surgical site in [target]'s [surgery.affected_limb.display_name]."),
 			SPAN_NOTICE("[user] finishes simultaneously constructing a prepared, bloodless, and widened surgical site in [surgery.affected_limb.display_name]."),
-			SPAN_NOTICE("[user] has constructed a prepared, bloodless, and widened surgical site in [target]'s [surgery.affected_limb.display_name]."))
+			SPAN_NOTICE("[user] finishes simultaneously constructing a prepared, bloodless, and widened surgical site in [target]'s [surgery.affected_limb.display_name]."))
 		playsound(get_turf(target), 'sound/surgery/retractor2.ogg', vol = 40, sound_range = 1)
 		surgery.status += 6 //IMS completes all steps.
 
