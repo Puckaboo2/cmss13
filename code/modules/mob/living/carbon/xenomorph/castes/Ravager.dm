@@ -187,8 +187,8 @@
 				bound_xeno.visible_message(SPAN_NOTICE("[bound_xeno] nibbles [target_carbon]"),
 				SPAN_XENONOTICE("ATTACK!!!! Wait- we're not allowed to attack hosts anymore..."))
 				return XENO_ATTACK_ACTION
-		bound_xeno.visible_message(SPAN_DANGER("[bound_xeno] fumbles stupidly for a moment, then slashes [target_carbon]!"), 
-			SPAN_HIGHDANGER("Your oversized claws and small mind get in the way of restraining, slashing [target_carbon]!"), message_flags=CHAT_TYPE_XENO_COMBAT)
+		bound_xeno.visible_message(SPAN_DANGER("[bound_xeno] fumbles stupidly for a moment, then slashes [target_carbon]!"),
+			SPAN_HIGHDANGER("Our oversized claws and small mind get in the way of restraining, slashing [target_carbon]!"), message_flags=CHAT_TYPE_XENO_COMBAT)
 		return INTENT_HARM
 
 /datum/action/xeno_action/onclick/empower/use_ability(atom/target)
@@ -203,7 +203,7 @@
 		if (!check_and_use_plasma_owner())
 			return
 
-		xeno.visible_message(SPAN_XENODANGER("[xeno] starts empowering!"), SPAN_XENODANGER("We start empowering ourself!"))
+		xeno.visible_message(SPAN_XENODANGER("[xeno] starts empowering!"), SPAN_XENODANGER("We start empowering ourselves!"))
 		activated_once = TRUE
 		button.icon_state = "template_active"
 		get_initial_shield()

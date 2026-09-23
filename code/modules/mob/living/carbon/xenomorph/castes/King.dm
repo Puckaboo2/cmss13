@@ -160,11 +160,11 @@
 		carbon.apply_armoured_damage(damage)
 		carbon.last_damage_data = create_cause_data(initial(xeno.name), xeno)
 		xeno.flick_attack_overlay(carbon, "slash")
-		to_chat(carbon, SPAN_DANGER("[xeno] slices into you with its razor sharp talons."))
+		to_chat(carbon, SPAN_DANGER("[xeno] slices into us with its razor sharp talons."))
 		log_attack("[key_name(xeno)] hit [key_name(carbon)] with [name]")
 		playsound(carbon, pick(slash_sounds), 30, TRUE)
 
-	xeno.visible_message(SPAN_DANGER("[xeno] slices around itself!"), SPAN_NOTICE("We slice around ourself!"))
+	xeno.visible_message(SPAN_DANGER("[xeno] slices around itself!"), SPAN_NOTICE("We slice around ourselves!"))
 	apply_cooldown()
 	..()
 
@@ -218,7 +218,7 @@
 			addtimer(CALLBACK(carbon, TYPE_PROC_REF(/mob, remove_client_color_matrix), "doom", 1 SECONDS), 5 SECONDS)
 			addtimer(CALLBACK(carbon, TYPE_PROC_REF(/mob, clear_fullscreen), "doom", 0.5 SECONDS), 5 SECONDS)
 
-			to_chat(carbon, SPAN_HIGHDANGER("[xeno]'s roar overwhelms your entire being!"))
+			to_chat(carbon, SPAN_HIGHDANGER("[xeno]'s roar overwhelms our entire being!"))
 			shake_camera(carbon, 6, 1)
 
 			if(ishuman(current_atom))
@@ -333,7 +333,7 @@
 
 	var/turf/template_turf = get_step(target_turf, SOUTHWEST)
 
-	to_chat(xeno, SPAN_XENONOTICE("Our muscles tense as we prepare ourself for a giant leap."))
+	to_chat(xeno, SPAN_XENONOTICE("Our muscles tense as we prepare ourselves for a giant leap."))
 	xeno.make_jittery(2 SECONDS)
 	if(!do_after(xeno, 2 SECONDS, INTERRUPT_ALL, BUSY_ICON_HOSTILE))
 		to_chat(xeno, SPAN_XENONOTICE("We relax our muslces and end our leap."))

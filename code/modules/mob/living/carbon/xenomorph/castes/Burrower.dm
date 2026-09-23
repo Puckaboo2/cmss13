@@ -185,7 +185,7 @@
 /mob/living/carbon/xenomorph/proc/burrow_off()
 	if(caste_type && GLOB.xeno_datum_list[caste_type])
 		caste = GLOB.xeno_datum_list[caste_type]
-	to_chat(src, SPAN_NOTICE("You resurface."))
+	to_chat(src, SPAN_NOTICE("We resurface."))
 	remove_traits(list(TRAIT_ABILITY_BURROWED, TRAIT_UNDENSE, TRAIT_IMMOBILIZED), TRAIT_SOURCE_ABILITY("Burrow"))
 	invisibility = FALSE
 	alpha = initial(alpha)
@@ -318,14 +318,14 @@
 
 
 	for(var/mob/living/carbon/carbon_target in range(7, burrower_tremor))
-		to_chat(carbon_target, SPAN_WARNING("You struggle to remain on your feet as the ground shakes beneath your feet!"))
+		to_chat(carbon_target, SPAN_WARNING("We struggle to remain on our feet as the ground shakes beneath our feet!"))
 		shake_camera(carbon_target, 2, 3)
 		if(get_dist(burrower_tremor, carbon_target) <= 3 && !burrower_tremor.can_not_harm(carbon_target))
 			if(carbon_target.mob_size >= MOB_SIZE_BIG)
 				carbon_target.apply_effect(1, SLOW)
 			else
 				carbon_target.apply_effect(1, WEAKEN)
-			to_chat(carbon_target, SPAN_WARNING("The violent tremors make you lose your footing!"))
+			to_chat(carbon_target, SPAN_WARNING("The violent tremors make us lose our footing!"))
 
 	apply_cooldown()
 	return ..()

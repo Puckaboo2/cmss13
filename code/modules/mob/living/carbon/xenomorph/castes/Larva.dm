@@ -82,7 +82,7 @@
 	if(should_block_game_interaction(src) && (!area || !(area.flags_area & AREA_ALLOW_XENO_JOIN)))
 		return //xenos on admin z level don't count
 
-	to_chat(client, SPAN_ALERTWARNING("You are inactive and will be available to ghosts in [XENO_AVAILABLE_TIMER] second\s!"))
+	to_chat(client, SPAN_ALERTWARNING("We are inactive and will be available to ghosts in [XENO_AVAILABLE_TIMER] second\s!"))
 	playsound_client(client, sound('sound/effects/xeno_evolveready.ogg'))
 
 /mob/living/carbon/xenomorph/larva/initialize_pass_flags(datum/pass_flags_container/pass_flags)
@@ -143,7 +143,7 @@
 	hud_set_hunter()
 
 /mob/living/carbon/xenomorph/larva/evolve_message()
-	to_chat(src, SPAN_XENODANGER("Strength ripples through your small form. You are ready to be shaped to the Queen's will. <a href='byond://?src=\ref[src];evolve=1;'>Evolve</a>"))
+	to_chat(src, SPAN_XENODANGER("Strength ripples through our small form. We are ready to be shaped to the Queen's will. <a href='byond://?src=\ref[src];evolve=1;'>Evolve</a>"))
 	playsound_client(client, sound('sound/effects/xeno_evolveready.ogg'))
 
 	var/datum/action/xeno_action/onclick/evolve/evolve_action = new()
@@ -206,14 +206,14 @@
 
 	switch(stat)
 		if(UNCONSCIOUS)
-			to_chat(src, SPAN_WARNING("You cannot emote while unconscious!"))
+			to_chat(src, SPAN_WARNING("We cannot emote while unconscious!"))
 			return FALSE
 		if(DEAD)
-			to_chat(src, SPAN_WARNING("You cannot emote while dead!"))
+			to_chat(src, SPAN_WARNING("We cannot emote while dead!"))
 			return FALSE
 	if(client)
 		if(client.prefs.muted & MUTE_IC)
-			to_chat(src, SPAN_DANGER("You cannot emote (muted)."))
+			to_chat(src, SPAN_DANGER("We cannot emote (muted)."))
 			return FALSE
 		if(!client.attempt_talking())
 			return FALSE
@@ -221,7 +221,7 @@
 	// Otherwise, ""roar""!
 	var/current_time = world.time
 	if(current_time - last_roar_time < 1 SECONDS)
-		to_chat(src, SPAN_WARNING("You must wait before roaring again."))
+		to_chat(src, SPAN_WARNING("We must wait before roaring again."))
 		return FALSE
 
 	last_roar_time = current_time

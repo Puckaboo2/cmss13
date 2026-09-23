@@ -118,10 +118,10 @@
 
 	to_chat(src, {"
 <span class='role_body'>|______________________|</span>
-<span class='role_header'>You are a yautja-alien hybrid!</span>
-<span class='role_body'>You are a xenomorph born from the body of your natural enemy, you are considered an abomination to all of the yautja race and they will do WHATEVER it takes to kill you.
-However, being born from one you also harbor their intelligence and strength. You are built to be able to take them on but that does not mean you are invincible. Stay with your hive and overwhelm them with your numbers. Your sisters have sacrificed a lot for you; Do not just wander off and die.
-You must still listen to the queen.
+<span class='role_header'>We are a Yautja-Xenomorph hybrid!</span>
+<span class='role_body'>We are a Xenomorph born from the body of our natural enemy, a Yautja. We are considered an abomination to all of the Yautja race and they will do WHATEVER it takes to kill us.
+However, being born from one, we also harbor their intelligence and strength. We are built to be able to take them on, but that does not mean we are invincible. Stay with our hive and overwhelm them with our numbers. Our sisters have sacrificed a lot for us; do not just wander off and die.
+We must still listen to the queen.
 </span>
 <span class='role_body'>|______________________|</span>
 "})
@@ -366,7 +366,7 @@ You must still listen to the queen.
 		if(twitch_message_cooldown < world.time)
 			xeno.visible_message(SPAN_XENOWARNING("[xeno]'s muscles twitch."), SPAN_XENOWARNING("Our claws twitch as we try to grab onto the target but lack the strength. Wait a moment to try again."))
 			twitch_message_cooldown = world.time + 5 SECONDS
-		return //this gives a little feedback on why your lunge didn't hit other than the lunge button going grey. Plus, it might spook marines that almost got lunged if they know why the message appeared, and extra spookiness is always good.
+		return //this gives a little feedback on why our lunge didn't hit other than the lunge button going grey. Plus, it might spook marines that almost got lunged if they know why the message appeared, and extra spookiness is always good.
 
 	if(!affected_atom)
 		return

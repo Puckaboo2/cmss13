@@ -266,7 +266,7 @@
 		if(human.mob_size < MOB_SIZE_BIG)
 			human.apply_effect(get_xeno_stun_duration(human, 1), WEAKEN)
 
-		to_chat(human, SPAN_XENOWARNING("You are struck by [xeno]'s tail sweep!"))
+		to_chat(human, SPAN_XENOWARNING("We are struck by [xeno]'s tail sweep!"))
 		playsound(human,'sound/weapons/alien_claw_block.ogg', 50, 1)
 
 	apply_cooldown()
@@ -322,7 +322,7 @@
 		return
 
 	if(fortify_state)
-		to_chat(xeno, SPAN_XENOWARNING("We tuck ourself into a defensive stance."))
+		to_chat(xeno, SPAN_XENOWARNING("We tuck ourselves into a defensive stance."))
 		RegisterSignal(owner, COMSIG_XENO_PRE_CALCULATE_ARMOURED_DAMAGE_PROJECTILE, PROC_REF(check_directional_armor))
 		xeno.mob_size = MOB_SIZE_IMMOBILE //knockback immune
 		xeno.mob_flags &= ~SQUEEZE_UNDER_VEHICLES

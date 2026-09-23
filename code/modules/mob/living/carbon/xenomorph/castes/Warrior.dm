@@ -206,7 +206,7 @@
 		if(twitch_message_cooldown < world.time )
 			lunge_user.visible_message(SPAN_XENOWARNING("[lunge_user]'s claws twitch."), SPAN_XENOWARNING("Our claws twitch as we try to lunge but lack the strength. Wait a moment to try again."))
 			twitch_message_cooldown = world.time + 5 SECONDS
-		return //this gives a little feedback on why your lunge didn't hit other than the lunge button going grey. Plus, it might spook marines that almost got lunged if they know why the message appeared, and extra spookiness is always good.
+		return //this gives a little feedback on why our lunge didn't hit other than the lunge button going grey. Plus, it might spook marines that almost got lunged if they know why the message appeared, and extra spookiness is always good.
 
 	if(!affected_atom)
 		return
@@ -352,7 +352,7 @@
 		if((target_limb.status & LIMB_SPLINTED) && !(target_limb.status & LIMB_SPLINTED_INDESTRUCTIBLE)) //If they have it splinted, the splint won't hold.
 			target_limb.status &= ~LIMB_SPLINTED
 			playsound(get_turf(carbon), 'sound/items/splintbreaks.ogg', 20)
-			to_chat(carbon, SPAN_DANGER("The splint on your [target_limb.display_name] comes apart!"))
+			to_chat(carbon, SPAN_DANGER("The splint on our [target_limb.display_name] comes apart!"))
 			carbon.pain.apply_pain(PAIN_BONE_BREAK_SPLINTED)
 
 		if(ishuman_strict(carbon))
