@@ -255,7 +255,7 @@
 	return null
 
 /mob/living/carbon/xenomorph/facehugger/handle_queen_screech(mob/living/carbon/xenomorph/queen/queen)
-	to_chat(src, SPAN_DANGER("The mighty roar of the queen makes us tremble and fall over!"))
+	to_chat(src, SPAN_DANGER("The mighty roar of the queen makes you tremble and fall over!"))
 	adjust_effect(6, STUN)
 	apply_effect(6, WEAKEN)
 

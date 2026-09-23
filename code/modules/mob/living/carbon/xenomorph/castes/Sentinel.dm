@@ -102,7 +102,7 @@
 			return original_damage //species like zombies or synths are immune to neurotoxin
 		if (buffed_slashes)
 			to_chat(bound_xeno, SPAN_XENOHIGHDANGER("Our slash applied a large amount of neurotoxin!"))
-			to_chat(carbon_target, SPAN_XENOHIGHDANGER("We feel a loss of muscular control as [bound_xeno] slashes us with its neurotoxin coated claws!"))
+			to_chat(carbon_target, SPAN_XENOHIGHDANGER("You feel a loss of muscular control as [bound_xeno] slashes us with its neurotoxin coated claws!"))
 			var/datum/effects/sentinel_neuro_stacks/sns = null
 			for (var/datum/effects/sentinel_neuro_stacks/sentinel_neuro_stacks in human.effects_list)
 				sns = sentinel_neuro_stacks

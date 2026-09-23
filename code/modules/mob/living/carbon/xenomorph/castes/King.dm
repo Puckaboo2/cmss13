@@ -160,7 +160,7 @@
 		carbon.apply_armoured_damage(damage)
 		carbon.last_damage_data = create_cause_data(initial(xeno.name), xeno)
 		xeno.flick_attack_overlay(carbon, "slash")
-		to_chat(carbon, SPAN_DANGER("[xeno] slices into us with its razor sharp talons."))
+		to_chat(carbon, SPAN_DANGER("[xeno] slices into you with its razor sharp talons!"))
 		log_attack("[key_name(xeno)] hit [key_name(carbon)] with [name]")
 		playsound(carbon, pick(slash_sounds), 30, TRUE)
 
@@ -218,7 +218,7 @@
 			addtimer(CALLBACK(carbon, TYPE_PROC_REF(/mob, remove_client_color_matrix), "doom", 1 SECONDS), 5 SECONDS)
 			addtimer(CALLBACK(carbon, TYPE_PROC_REF(/mob, clear_fullscreen), "doom", 0.5 SECONDS), 5 SECONDS)
 
-			to_chat(carbon, SPAN_HIGHDANGER("[xeno]'s roar overwhelms our entire being!"))
+			to_chat(carbon, SPAN_HIGHDANGER("[xeno]'s roar overwhelms your entire being!"))
 			shake_camera(carbon, 6, 1)
 
 			if(ishuman(current_atom))

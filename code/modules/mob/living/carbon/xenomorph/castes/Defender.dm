@@ -266,7 +266,7 @@
 		if(human.mob_size < MOB_SIZE_BIG)
 			human.apply_effect(get_xeno_stun_duration(human, 1), WEAKEN)
 
-		to_chat(human, SPAN_XENOWARNING("We are struck by [xeno]'s tail sweep!"))
+		to_chat(human, SPAN_XENOWARNING("You are struck by [xeno]'s tail sweep!"))
 		playsound(human,'sound/weapons/alien_claw_block.ogg', 50, 1)
 
 	apply_cooldown()

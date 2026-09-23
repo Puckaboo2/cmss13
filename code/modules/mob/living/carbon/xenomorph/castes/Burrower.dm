@@ -318,14 +318,14 @@
 
 
 	for(var/mob/living/carbon/carbon_target in range(7, burrower_tremor))
-		to_chat(carbon_target, SPAN_WARNING("We struggle to remain on our feet as the ground shakes beneath our feet!"))
+		to_chat(carbon_target, SPAN_WARNING("You struggle to remain on your feet as the ground shakes beneath your feet!"))
 		shake_camera(carbon_target, 2, 3)
 		if(get_dist(burrower_tremor, carbon_target) <= 3 && !burrower_tremor.can_not_harm(carbon_target))
 			if(carbon_target.mob_size >= MOB_SIZE_BIG)
 				carbon_target.apply_effect(1, SLOW)
 			else
 				carbon_target.apply_effect(1, WEAKEN)
-			to_chat(carbon_target, SPAN_WARNING("The violent tremors make us lose our footing!"))
+			to_chat(carbon_target, SPAN_WARNING("The violent tremors make you lose your footing!"))
 
 	apply_cooldown()
 	return ..()

@@ -352,7 +352,7 @@
 		if((target_limb.status & LIMB_SPLINTED) && !(target_limb.status & LIMB_SPLINTED_INDESTRUCTIBLE)) //If they have it splinted, the splint won't hold.
 			target_limb.status &= ~LIMB_SPLINTED
 			playsound(get_turf(carbon), 'sound/items/splintbreaks.ogg', 20)
-			to_chat(carbon, SPAN_DANGER("The splint on our [target_limb.display_name] comes apart!"))
+			to_chat(carbon, SPAN_DANGER("The splint on your [target_limb.display_name] comes apart!"))
 			carbon.pain.apply_pain(PAIN_BONE_BREAK_SPLINTED)
 
 		if(ishuman_strict(carbon))

@@ -312,7 +312,7 @@
 			continue
 
 		new /datum/effects/xeno_slow(target, xeno, ttl = 3.5 SECONDS)
-		to_chat(target, SPAN_XENODANGER("We are slowed as the impact of [xeno] shakes the ground!"))
+		to_chat(target, SPAN_XENODANGER("You are slowed as the impact of [xeno] shakes the ground!"))
 
 /datum/action/xeno_action/activable/pounce/crusher_charge/additional_effects(mob/living/target)
 	var/mob/living/carbon/xenomorph/xeno = owner
@@ -425,7 +425,7 @@
 
 		new /datum/effects/xeno_slow(targets, xeno, ttl = get_xeno_stun_duration(targets, effect_duration))
 		targets.apply_effect(get_xeno_stun_duration(targets, 0.2), WEAKEN)
-		to_chat(targets, SPAN_XENOHIGHDANGER("We are slowed as [xeno] knocks us off balance!"))
+		to_chat(targets, SPAN_XENOHIGHDANGER("You are slowed as [xeno] knocks you off balance!"))
 
 	apply_cooldown()
 	return ..()
@@ -455,7 +455,7 @@
 			continue
 
 		new effect_type_base(target_to_stomp, xeno, null, null, get_xeno_stun_duration(target_to_stomp, effect_duration))
-		to_chat(target_to_stomp, SPAN_XENOHIGHDANGER("We are BRUTALLY crushed and stomped on by [xeno]!!!"))
+		to_chat(target_to_stomp, SPAN_XENOHIGHDANGER("You are BRUTALLY crushed and stomped on by [xeno]!!!"))
 		shake_camera(target_to_stomp, 10, 2)
 		if(target_to_stomp.mob_size < MOB_SIZE_BIG)
 			target_to_stomp.apply_effect(get_xeno_stun_duration(target_to_stomp, 0.2), WEAKEN)
@@ -471,8 +471,8 @@
 		if(targets_to_get.client)
 			shake_camera(targets_to_get, 10, 2)
 		if(stomped_carbon)
-			to_chat(targets_to_get, SPAN_XENOHIGHDANGER("We watch as [stomped_carbon] gets crushed by [xeno]!"))
-		to_chat(targets_to_get, SPAN_XENOHIGHDANGER("We are shaken as [xeno] quakes the earth!"))
+			to_chat(targets_to_get, SPAN_XENOHIGHDANGER("You watch as [stomped_carbon] gets crushed by [xeno]!"))
+		to_chat(targets_to_get, SPAN_XENOHIGHDANGER("You are shaken as [xeno] quakes the earth!"))
 
 	apply_cooldown()
 	return ..()

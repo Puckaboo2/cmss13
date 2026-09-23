@@ -153,7 +153,7 @@
 		acid_effect = new /datum/effects/acid/(target_carbon)
 
 	acid_effect.increment_duration(speed_up_progress)
-	to_chat(target_carbon, SPAN_XENOHIGHDANGER("We feel a burning pain as [bound_xeno] slashes us, covering us in acid!"))
+	to_chat(target_carbon, SPAN_XENOHIGHDANGER("You feel a burning pain as [bound_xeno] slashes you, covering you in acid!"))
 
 	return original_damage + burn_damage
 
@@ -277,9 +277,9 @@
 			var/armor_block_acid = target.getarmor("chest", ARMOR_BIO)
 			var/n_acid_damage = armor_damage_reduction(GLOB.marine_melee, damage, armor_block_acid)
 			if(n_acid_damage <= 0.34*damage)
-				to_chat(target, SPAN_WARNING("Our armor absorbs the acid!"))
+				to_chat(target, SPAN_WARNING("Your armor absorbs the acid!"))
 			else if(n_acid_damage <= 0.67*damage)
-				to_chat(target, SPAN_WARNING("Our armor softens the acid!"))
+				to_chat(target, SPAN_WARNING("Your armor softens the acid!"))
 			target.apply_damage(n_acid_damage, BURN, "chest")
 		if(prob(30))
 			new /obj/effect/lingering_acid(turf, xeno.hivenumber)
