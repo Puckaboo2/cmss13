@@ -560,7 +560,7 @@
 	next_move = world.time + move_delay
 	qdel(O)
 	update_icon()
-	message_admins("[key_name(user)] ([user.job]) attached vehicle clamp to [src]")
+	message_admins("[key_name(user)] ([user.job]) attached vehicle clamp to [src].")
 
 /obj/vehicle/multitile/proc/detach_clamp(mob/user)
 	clamped = FALSE
@@ -574,7 +574,7 @@
 	var/obj/item/vehicle_clamp/O = new(get_turf(src))
 	if(user)
 		O.forceMove(get_turf(user))
-		message_admins("[key_name(user)] ([user.job]) detached vehicle clamp from \the [src]")
+		message_admins("[key_name(user)] ([user.job]) detached vehicle clamp from \the [src].")
 	else
 		O.forceMove(get_turf(src))
 		message_admins("Vehicle clamp was detached from \the [src].")

@@ -160,7 +160,7 @@
 					return
 			if(length(item_box.contents) < item_box.num_of_magazines)
 				user.drop_inv_item_to_loc(W, item_box)
-				to_chat(user, SPAN_NOTICE("You put \a [W] into [src]"))
+				to_chat(user, SPAN_NOTICE("You put \a [W] into [src]."))
 				update_icon()
 			else
 				to_chat(user, SPAN_WARNING("[src] is full."))

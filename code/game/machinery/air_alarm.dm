@@ -935,7 +935,7 @@ table tr:first-child th:first-child { border: none;}
 			else
 				cut(t1)
 				if (AAlarmwires == 0)
-					to_chat(usr, SPAN_NOTICE("You cut last of wires inside [src]"))
+					to_chat(usr, SPAN_NOTICE("You cut last of wires inside [src]."))
 					update_icon()
 					buildstage = 1
 				return

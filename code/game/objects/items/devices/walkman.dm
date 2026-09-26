@@ -54,7 +54,7 @@
 			if(!tape)
 				insert_tape(W)
 				playsound(src,'sound/weapons/handcuffs.ogg',20,1)
-				to_chat(user,SPAN_INFO("You insert \the [W] into \the [src]"))
+				to_chat(user,SPAN_INFO("You insert \the [W] into \the [src]."))
 			else
 				to_chat(user,SPAN_WARNING("Remove the other tape first!"))
 
@@ -70,7 +70,7 @@
 			to_chat(user,SPAN_INFO("You press [src]'s 'play' button."))
 		else
 			pause()
-			to_chat(user,SPAN_INFO("You pause [src]"))
+			to_chat(user,SPAN_INFO("You pause [src]."))
 		update_icon()
 	else
 		to_chat(user,SPAN_INFO("There's no tape to play."))
@@ -156,7 +156,7 @@
 	tape = null
 	update_icon()
 	playsound(src,'sound/weapons/handcuffs.ogg',20,1)
-	to_chat(user,SPAN_INFO("You eject the tape from [src]"))
+	to_chat(user,SPAN_INFO("You eject the tape from [src]."))
 
 /obj/item/device/walkman/proc/next_song(mob/user)
 
@@ -399,7 +399,7 @@
 	else
 		flipped = TRUE
 		icon_state = "cassette_flip"
-	to_chat(user,"You flip [src]")
+	to_chat(user,"You flip [src].")
 
 /obj/item/device/cassette_tape/verb/flip()
 	set name = "Flip tape"

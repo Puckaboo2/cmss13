@@ -8,7 +8,7 @@
 
 /obj/structure/coatrack/attack_hand(mob/user as mob)
 	if(coat)
-		user.visible_message("[user] takes [coat] off \the [src].", "You take [coat] off the \the [src]")
+		user.visible_message("[user] takes [coat] off \the [src].", "You take [coat] off the \the [src].")
 		if(!user.put_in_active_hand(coat))
 			coat.forceMove(get_turf(user))
 		coat = null
@@ -20,13 +20,13 @@
 		if(istype(W,T))
 			can_hang = 1
 	if (can_hang && !coat)
-		user.visible_message("[user] hangs [W] on \the [src].", "You hang [W] on the \the [src]")
+		user.visible_message("[user] hangs [W] on \the [src].", "You hang [W] on the \the [src].")
 		coat = W
 		user.drop_held_item(src)
 		coat.forceMove(src)
 		update_icon()
 	else
-		to_chat(user, SPAN_NOTICE("You cannot hang [W] on [src]"))
+		to_chat(user, SPAN_NOTICE("You cannot hang [W] on [src]."))
 		return ..()
 
 /obj/structure/coatrack/Crossed(atom/movable/AM)

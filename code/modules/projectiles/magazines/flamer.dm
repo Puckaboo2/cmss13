@@ -67,7 +67,7 @@
 	reagents.clear_reagents()
 
 	playsound(loc, 'sound/effects/refill.ogg', 25, 1, 3)
-	to_chat(usr, SPAN_NOTICE("You empty out [src]"))
+	to_chat(usr, SPAN_NOTICE("You empty out [src]."))
 	update_icon()
 
 /obj/item/ammo_magazine/flamer_tank/on_reagent_change()

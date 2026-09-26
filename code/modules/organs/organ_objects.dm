@@ -262,7 +262,7 @@
 	if(!user.is_holding(src) || user.action_busy)
 		return
 
-	user.visible_message(SPAN_NOTICE("[user] starts planting [src]"), SPAN_NOTICE("You start planting [src]"))
+	user.visible_message(SPAN_NOTICE("[user] starts planting [src]."), SPAN_NOTICE("You start planting [src]."))
 	if(!do_after(user, 3 SECONDS, show_busy_icon = TRUE, target = target))
 		return
 

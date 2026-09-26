@@ -572,8 +572,8 @@ GLOBAL_LIST_INIT(airlock_wire_descriptions, flatten_numeric_alist(alist(
 
 	if(istype(attacking_item, /obj/item/clothing/mask/cigarette))
 		if(isElectrified())
-			var/obj/item/clothing/mask/cigarette/L = attacking_item
-			L.light(SPAN_NOTICE("[user] lights their [L] on an electrical arc from [src]"))
+			var/obj/item/clothing/mask/cigarette/lightthing = attacking_item
+			lightting.light(SPAN_NOTICE("[user] lights their [lightthing] on an electrical arc from [src]."))
 			return
 
 	if(!isRemoteControlling(user))

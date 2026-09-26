@@ -236,7 +236,7 @@
 		if(!has_chain)
 			var/obj/item/yautja/chain/chain_to_wrap = chain_wrapper
 			has_chain = TRUE
-			to_chat(user, SPAN_NOTICE("You wrap the [chain_to_wrap] around [src]"))
+			to_chat(user, SPAN_NOTICE("You wrap the [chain_to_wrap] around [src]."))
 			playsound(user, 'sound/weapons/chain_whip.ogg', 50, 1)
 			qdel(chain_to_wrap)
 		else

@@ -20,7 +20,7 @@
 /obj/structure/machinery/chem_extractor/attackby(obj/item/tool, mob/user)
 	. = ..()
 	if(istype(tool, /obj/item/tool/wrench))
-		user.visible_message(SPAN_NOTICE("[user] starts undeploying [src]"), SPAN_NOTICE("You start undeploying [src]"))
+		user.visible_message(SPAN_NOTICE("[user] starts undeploying [src]."), SPAN_NOTICE("You start undeploying [src]."))
 		if(!do_after(user, 1.5 SECONDS, show_busy_icon = TRUE, target = src))
 			return
 		new /obj/item/chem_extractor(get_turf(src))

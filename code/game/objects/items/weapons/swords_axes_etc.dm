@@ -114,7 +114,7 @@
 	playsound(target, stun_sound, 50, TRUE, 7)
 	user.animation_attack_on(target)
 	user.flick_attack_overlay(target, "punch")
-	log_interact(user, target, "[key_name(user)] stunned [key_name(target)] with \the [src]")
+	log_interact(user, target, "[key_name(user)] stunned [key_name(target)] with \the [src].")
 	// Hit 'em
 	var/final_stun_force = stun_force
 	var/datum/skills/user_skills = user.skills

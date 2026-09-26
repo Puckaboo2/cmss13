@@ -103,7 +103,7 @@
 		if(limit == 16)
 			grind_duration = 3 SECONDS
 			limit = 25
-			to_chat(user, SPAN_NOTICE("You insert [O] into [src]"))
+			to_chat(user, SPAN_NOTICE("You insert [O] into [src]."))
 			qdel(O)
 			return TRUE
 		else

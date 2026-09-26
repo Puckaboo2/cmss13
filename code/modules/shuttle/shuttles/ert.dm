@@ -189,9 +189,9 @@
 				air.explo_proof = TRUE
 				air.unacidable = TRUE
 	if(!port_door)
-		WARNING("No port door found for [src]")
+		WARNING("No port door found for [src].")
 	if(!starboard_door)
-		WARNING("No starboard door found for [src]")
+		WARNING("No starboard door found for [src].")
 
 
 /obj/docking_port/mobile/emergency_response/big
@@ -223,9 +223,9 @@
 				external_doors += list(air)
 				port_door = air
 	if(!port_door)
-		WARNING("No port door found for [src]")
+		WARNING("No port door found for [src].")
 	if(!starboard_door)
-		WARNING("No starboard door found for [src]")
+		WARNING("No starboard door found for [src].")
 
 // Generic ERT Dock
 /obj/docking_port/stationary/emergency_response
@@ -311,7 +311,7 @@
 				if(door.id == airlock_id)
 					external_airlocks += list(door)
 	if(!length(external_airlocks))
-		WARNING("No external airlocks for [src]")
+		WARNING("No external airlocks for [src].")
 
 /obj/docking_port/stationary/emergency_response/external/on_arrival(obj/docking_port/mobile/arriving_shuttle)
 	for(var/door in external_airlocks)

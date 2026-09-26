@@ -460,7 +460,7 @@
 			return
 
 	if(!do_after(user, 5 SECONDS, INTERRUPT_ALL, BUSY_ICON_BUILD)) // do-after
-		to_chat(user, SPAN_WARNING("You were interrupted while deploying [src]"))
+		to_chat(user, SPAN_WARNING("You were interrupted while deploying [src]."))
 		return
 
 	if(!deploy_area.allow_construction) //re-check turf etc.

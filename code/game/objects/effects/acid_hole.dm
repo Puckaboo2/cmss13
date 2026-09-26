@@ -154,7 +154,7 @@
 			if(Target.density)
 				return
 			user.visible_message(SPAN_WARNING("[user] throws [G] through [src]!"),
-								SPAN_WARNING("You throw [G] through [src]"))
+								SPAN_WARNING("You throw [G] through [src]."))
 			user.drop_held_item()
 			G.forceMove(Target)
 			G.setDir(pick(NORTH, SOUTH, EAST, WEST, NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST))
@@ -176,7 +176,7 @@
 			if(Target.density)
 				return
 			user.visible_message(SPAN_WARNING("[user] throws [F] through [src]!"),
-								SPAN_WARNING("You throw [F] through [src]"))
+								SPAN_WARNING("You throw [F] through [src]."))
 			user.drop_held_item()
 			F.forceMove(Target)
 			F.setDir(pick(NORTH, SOUTH, EAST, WEST, NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST))
