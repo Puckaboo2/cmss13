@@ -494,6 +494,7 @@
 
 /obj/item/reagent_container/glass/beaker/vial/epinephrine
 	name = "epinephrine vial"
+	desc = "A vial filled label that says, 'Epinephrine, for use in hypospray.'"
 
 /obj/item/reagent_container/glass/beaker/vial/epinephrine/Initialize()
 	. = ..()
@@ -502,6 +503,7 @@
 
 /obj/item/reagent_container/glass/beaker/vial/tricordrazine
 	name = "tricordrazine vial"
+	desc = "A vial with a label that says, 'Tricordrazine, for use in hypospray.'"
 
 /obj/item/reagent_container/glass/beaker/vial/tricordrazine/Initialize()
 	. = ..()
@@ -510,13 +512,11 @@
 
 /obj/item/reagent_container/glass/beaker/vial/sedative
 	name = "chloral hydrate vial"
+	desc = "A vial with a label that says, 'Chloral Hydrate, for use in hypospray.'"
 
-/obj/item/reagent_container/glass/beaker/vial/sedative/Initialize()
-	. = ..()
-	reagents.add_reagent("chloralhydrate", 30)
-	update_icon()
 /obj/item/reagent_container/glass/beaker/cryoxadone
 	name = "cryoxadone beaker"
+	desc = "A beaker with a label that says, 'Cryoxadone.'"
 
 /obj/item/reagent_container/glass/beaker/cryoxadone/Initialize()
 	. = ..()
@@ -525,6 +525,7 @@
 
 /obj/item/reagent_container/glass/beaker/phoron
 	name = "phoron beaker"
+	desc = "A beaker with a label that says, 'Phoron.'"
 
 /obj/item/reagent_container/glass/beaker/phoron/Initialize()
 	. = ..()
@@ -533,6 +534,7 @@
 
 /obj/item/reagent_container/glass/beaker/cryopredmix
 	name = "cryomix beaker"
+	desc = "A beaker with a label that says, 'Cryoxadone + Clonexadone.' A pre-made batch ready for the cryo tubes! Neat!"
 
 /obj/item/reagent_container/glass/beaker/cryopredmix/Initialize()
 	. = ..()
@@ -542,6 +544,7 @@
 
 /obj/item/reagent_container/glass/beaker/sulphuric
 	name = "sulphuric acid beaker"
+	desc = "A beaker with a label that says, 'Sulphuric Acid.'"
 
 /obj/item/reagent_container/glass/beaker/sulphuric/Initialize()
 	. = ..()
@@ -550,6 +553,7 @@
 
 /obj/item/reagent_container/glass/beaker/ethanol
 	name = "ethanol beaker"
+	desc = "A beaker with a label that says, 'Ethanol. Please do not drink.'"
 
 /obj/item/reagent_container/glass/beaker/ethanol/Initialize()
 	. = ..()
@@ -558,6 +562,7 @@
 
 /obj/item/reagent_container/glass/beaker/large/phosphorus
 	name = "phosphorus beaker"
+	desc = "A beaker with a label that says, 'Phosphorus.'"
 
 /obj/item/reagent_container/glass/beaker/large/phosphorus/Initialize()
 	. = ..()
@@ -566,6 +571,7 @@
 
 /obj/item/reagent_container/glass/beaker/large/lithium
 	name = "lithium beaker"
+	desc = "A beaker with a label that says, 'Lithium.'"
 
 /obj/item/reagent_container/glass/beaker/large/lithium/Initialize()
 	. = ..()
@@ -574,6 +580,7 @@
 
 /obj/item/reagent_container/glass/beaker/large/sodiumchloride
 	name = "sodium chloride beaker"
+	desc = "A beaker with a label that says, 'Sodium Chloride.'"
 
 /obj/item/reagent_container/glass/beaker/large/sodiumchloride/Initialize()
 	. = ..()
@@ -582,6 +589,7 @@
 
 /obj/item/reagent_container/glass/beaker/large/potassiumchloride
 	name = "potassium chloride beaker"
+	desc = "A beaker with a label that says, 'Potassium Chloride.'"
 
 /obj/item/reagent_container/glass/beaker/large/potassiumchloride/Initialize()
 	. = ..()
@@ -589,7 +597,7 @@
 	update_icon()
 
 /obj/item/reagent_container/glass/canister
-	name = "Hydrogen canister"
+	name = "hydrogen canister"
 	desc = "A canister containing pressurized hydrogen. Can be used to refill storage tanks."
 	icon = 'icons/obj/items/tank.dmi'
 	item_icons = list(
@@ -615,35 +623,35 @@
 	. = ..()
 
 /obj/item/reagent_container/glass/canister/ammonia
-	name = "Ammonia canister"
+	name = "ammonia canister"
 	desc = "A canister containing pressurized ammonia. Can be used to refill storage tanks."
 	icon_state = "canister_ammonia"
 	item_state = "canister_ammonia"
 	reagent = "ammonia"
 
 /obj/item/reagent_container/glass/canister/methane
-	name = "Methane canister"
+	name = "methane canister"
 	desc = "A canister containing pressurized methane. Can be used to refill storage tanks."
 	icon_state = "canister_methane"
 	item_state = "canister_methane"
 	reagent = "methane"
 
 /obj/item/reagent_container/glass/canister/pacid
-	name = "Polytrinic acid canister"
+	name = "polytrinic acid canister"
 	desc = "A canister containing pressurized polytrinic acid. Can be used to refill storage tanks."
 	icon_state = "canister_pacid"
 	item_state = "canister_pacid"
 	reagent = "pacid"
 
 /obj/item/reagent_container/glass/canister/oxygen
-	name = "Oxygen canister"
+	name = "oxygen canister"
 	desc = "A canister containing pressurized oxygen. Can be used to refill storage tanks."
 	icon_state = "canister_oxygen"
 	item_state = "canister_oxygen"
 	reagent = "oxygen"
 
 /obj/item/reagent_container/glass/pressurized_canister // See the Pressurized Reagent Canister Pouch
-	name = "Pressurized canister"
+	name = "pressurized canister"
 	desc = "A pressurized container. The inner part of a pressurized reagent canister pouch. Only compatible with its pouch, machinery or a storage tank."
 	icon = 'icons/obj/items/tank.dmi'
 	icon_state = "pressurized_reagent_container"
